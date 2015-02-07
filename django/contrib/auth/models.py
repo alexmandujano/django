@@ -306,7 +306,7 @@ class PermissionsMixin(models.Model):
 
     def get_group_permissions(self, obj=None):
         """
-        Returns a list of permission strings that this user has through their
+        Returns a list of permission strings that this user has through his/her
         groups. This method queries all available auth backends. If an object
         is passed in, only permissions matching this object are returned.
         """
@@ -374,6 +374,8 @@ class AbstractUser(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
     last_name = models.CharField(_('last name'), max_length=30, blank=True)
     email = models.EmailField(_('email address'), blank=True)
+    #esto agregue porseacaso
+    user_type = models.CharField(_('user type'), max_length=3, blank=True)
     is_staff = models.BooleanField(_('staff status'), default=False,
         help_text=_('Designates whether the user can log into this admin '
                     'site.'))
