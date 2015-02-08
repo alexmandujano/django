@@ -221,6 +221,7 @@ body.popup .submit-row {
 
 .vTextField {
     width: 20em;
+    height: 20px;
 }
 
 .vIntegerField {
